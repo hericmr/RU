@@ -1,0 +1,44 @@
+body {
+    background-color: #f8f9fa; /* Fundo claro */
+}
+
+h1 {
+    color: #28a745; /* Verde para o título */
+    font-size: 2.5rem; /* Tamanho do título maior */
+}
+
+.table th, .table td {
+    text-align: center; /* Centraliza cabeçalhos e conteúdo */
+    vertical-align: middle; /* Alinha o conteúdo ao centro verticalmente */
+}
+
+.table-responsive {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.text-center {
+    font-size: 1.2em; /* Aumenta o tamanho da fonte do texto centralizado */
+}
+
+footer {
+    margin-top: 40px;
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.8rem; /* Título menor em telas pequenas */
+    }
+
+    .text-center {
+        font-size: 1.1em; /* Ajuste na fonte em dispositivos menores */
+    }
+
+    .card {
+        padding: 1rem; /* Menos padding em dispositivos móveis */
+    }
+
+    footer {
+        font-size: 0.9rem; /* Rodapé menor em dispositivos móveis */
+    }
+}
