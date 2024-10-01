@@ -1,69 +1,121 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="RU Sincerão - Avalie as Refeições do RU da Silva Jardim!!">
-    <meta name="author" content="Heric">
-    
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="RU Sincerão - Avalie as Refeições do RU da Silva Jardim!">
-    <meta property="og:description" content="Descubra as delícias do cardápio das refeições e veja as opiniões de outros usuários.">
-    <meta property="og:image" content="comendo.png">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="RU Sincerão - Avalie as Refeições do RU da Silva Jardim!!">
+<meta name="author" content="Heric">
 
-    
-    <!-- Twitter Card Meta Tags (Opcional) -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="RU Sincerão - Avalie as Refeições do RU da Silva Jardim!">
-    <meta name="twitter:description" content="Descubra as delícias do cardápio das refeições e veja as opiniões de outros usuários.">
-    <meta name="twitter:image" content="comendo.png">
-    
-    <title>RU Sincerão - Avalie as Refeições do RU da Silva Jardim!</title>
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <!-- Incluindo o Firebase -->
-    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
-    <!-- Incluindo ícones FontAwesome para emojis e reações -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+<!-- Open Graph Meta Tags -->
+<meta property="og:title" content="RU Sincerão - Avalie as Refeições do RU da Silva Jardim!">
+<meta property="og:description" content="Descubra as delícias do cardápio das refeições e veja as opiniões de outros usuários.">
+<meta property="og:image" content="comendo.png">
+
+
+<!-- Twitter Card Meta Tags (Opcional) -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="RU Sincerão - Avalie as Refeições do RU da Silva Jardim!">
+<meta name="twitter:description" content="Descubra as delícias do cardápio das refeições e veja as opiniões de outros usuários.">
+<meta name="twitter:image" content="comendo.png">
+
+<title>RU Sincerão - Avalie as Refeições do RU da Silva Jardim!</title>
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<!-- Incluindo o Firebase -->
+<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+<!-- Incluindo ícones FontAwesome para emojis e reações -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 <body>
-    <div class="container mt-5">
-        <h1 class="text-center mb-4">🍽️ RU Sincerão 🍽️</h1>
-        <div class="text-center">
-            <img src="comendo.png" class="img-fluid rounded mb-4" alt="Refeitório Universitário da Silva Jardim" width="300" height="300">
-        </div>
-        <p class="text-center">Avalie anonimamente aqui as refeições do RU da UNIFESP Silva Jardim e veja o que os outros acharam! Nós postaremos os comentários no nosso <a href="https://www.instagram.com" target="_blank">Instagram</a>! 📸</p>
-        
+<div class="container mt-5">
+<h1 class="text-center mb-4">🍽️ RU Sincerão 🍽️</h1>
+<div class="text-center">
+<img src="comendo.png" class="img-fluid rounded mb-4" alt="Refeitório Universitário da Silva Jardim" width="300" height="300">
+</div>
+<p class="text-center">Avalie anonimamente aqui as refeições do RU da UNIFESP Silva Jardim e veja o que os outros acharam! Nós postaremos os comentários no nosso <a href="https://www.instagram.com" target="_blank">Instagram</a>! 📸</p>
 
-        <!-- Opiniões Recentes -->
-        <div class="card p-4 mb-4">
-            <h3 class="text-center">💬 Opiniões Recentes 💬</h3>
-            <ul id="comentarios-lista" class="list-group">
-                <!-- Comentários aparecerão aqui dinamicamente -->
-            </ul>
+        <!-- Destaques do dia -->
+        <div class="alert alert-info text-center mb-4">
+            🔥 Destaque do dia: <strong id="destaque-principal">Carregando o prato do dia...</strong> - segundo nossos sincerões, é o prato mais amado hoje! 🥇
         </div>
-        
-        <!-- Rodapé com os Mandamentos do RU -->
-        <footer class="bg-dark text-white text-center p-4 mt-4">
-            <h4>Os Mandamentos do RU</h4>
-            <p>1- Pegai sempre dois pratos.<br>
-               2 - Não desejarás o bife do próximo.<br>
-               3 - Respeitarás os veganos, eles também são filhos de Deus.<br>
-               4 - Priorizarás o RU, em seguida a tia Ana.<br>
-               5 - Não desperdiçarás a mistura.<br>
-               6 - Honrarás os trabalhadores do RU, pois eles não são teus servos, ó ignorante!<br>
-               7 - Evitai apaixonar-te mais de quatro vezes por refeição.<br>
-               8 - Não proferirás que "o pantaneira era melhor."<br><br>
-               Que esses mandamentos tragam sabedoria e alegria àqueles que frequentam o RU. Amém. 🙏
-            </p>
-        </footer>
-    </div>
 
-    <!-- Incluindo jQuery e Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="script.js"></script>
+
+<!-- Tabela de cardápio -->
+<div class="card p-4 mb-4">
+<h2 class="text-center">Cardápio das Refeições</h2>
+<div class="table-responsive"> <!-- Tabela responsiva -->
+<table id="tabela-refeicoes" class="table table-bordered table-striped">
+<thead class="thead-dark">
+<tr>
+<th>DATA</th>
+<th>ARROZ</th>
+<th>FEIJÃO</th>
+<th>SALADA 1</th>
+<th>SALADA 2</th>
+<th>PRATO PRINCIPAL</th>
+<th>PRATO VEGETARIANO</th>
+<th>GUARNIÇÃO</th>
+<th>SOBREMESA</th>
+</tr>
+</thead>
+<tbody>
+<!-- Dados serão inseridos dinamicamente pelo script -->
+</tbody>
+</table>
+</div>
+</div>
+
+<!-- Formulário de comentários -->
+<div class="card p-4 mb-4">
+<h2>Dê sua Opinião!</h2>
+<form id="comentario-form">
+<div class="form-group">
+<label for="nota">Nota:</label>
+<select class="form-control" id="nota" required>
+<option value="1">1 - 🤢 Ruim</option>
+<option value="2">2 - 😐 Regular</option>
+<option value="3">3 - 🙂 Bom</option>
+<option value="4">4 - 😋 Muito Bom</option>
+<option value="5">5 - 😍 Excelente</option>
+</select>
+</div>
+<div class="form-group">
+<label for="comentario">Comentário:</label>
+<textarea class="form-control" id="comentario" rows="3" placeholder="Deixe sua crítica construtiva ou destrutiva!" required></textarea>
+</div>
+<button type="submit" class="btn btn-primary">Enviar</button>
+</form>
+</div>
+
+<!-- Opiniões Recentes -->
+<div class="card p-4 mb-4">
+<h3 class="text-center">💬 Opiniões Recentes 💬</h3>
+<ul id="comentarios-lista" class="list-group">
+<!-- Comentários aparecerão aqui dinamicamente -->
+</ul>
+</div>
+
+<!-- Rodapé com os Mandamentos do RU -->
+<footer class="bg-dark text-white text-center p-4 mt-4">
+<h4>Os Mandamentos do RU</h4>
+<p>1- Pegai sempre dois pratos.<br>
+2 - Não desejarás o bife do próximo.<br>
+3 - Respeitarás os veganos, eles também são filhos de Deus.<br>
+4 - Priorizarás o RU, em seguida a tia Ana.<br>
+5 - Não desperdiçarás a mistura.<br>
+6 - Honrarás os trabalhadores do RU, pois eles não são teus servos, ó ignorante!<br>
+7 - Evitai apaixonar-te mais de quatro vezes por refeição.<br>
+8 - Não proferirás que "o pantaneira era melhor."<br><br>
+Que esses mandamentos tragam sabedoria e alegria àqueles que frequentam o RU. Amém. 🙏
+</p>
+</footer>
+</div>
+
+<!-- Incluindo jQuery e Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
